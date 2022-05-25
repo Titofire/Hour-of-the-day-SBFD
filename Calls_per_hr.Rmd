@@ -1,0 +1,57 @@
+---
+title: "Calls_per_hr"
+author: "T. Poole"
+date: '2022-05-25'
+output: 
+        html_document:
+                code_fold: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+     #load packages#
+        
+        library("tidyverse")
+        
+```
+
+### Preamble
+
+This is an analysis displaying the frequency of call volume by hour of the day
+at the South Burlington Fire Department for a six year period 2016-2021.
+
+```{r}
+####   Import data and remove non-essential fields/variables ####
+
+Calls_2016_2021.df <- read.csv(file = "pivot20162021.csv",header = TRUE, na.strings=c("", "NA"),sep = ",")
+
+#### change hour of day variable to a factor ####
+
+Calls_2016_2021.df$hour <- as.factor(Calls_2016_2021.df$hour)
+
+```
+--------------------------------------------------------------------------------
+
+**pivot20212016.csv: data file queried from Fire House database**
+
+**Description:** The data comprises SBFD run data including fields of the Nfirs 
+basic module plus a number of calculated fields.
+
+**Format:** Calls_2016_2021.df:A dataframe with 22412 observations (calls), 
+on 86 variables.
+
+--------------------------------------------------------------------------------
+
+#### Call Volume by Hour of the Day:
+```{r}
+summary.factor(Calls_2016_2021.df$hour)
+```
+ The Bar chart displays the breakdown:
+```{r}
+Calls_2016_2021.df$hour %>%
+     qplot(colour = I("red"))
+```
+
