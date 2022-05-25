@@ -13,7 +13,7 @@
 
 <meta name="date" content="2022-05-25" />
 
-<title>Calls_per_hr</title>
+<title>Calls per Hour</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -443,7 +443,7 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Calls_per_hr</h1>
+<h1 class="title toc-ignore">Calls per Hour</h1>
 <h4 class="author">T. Poole</h4>
 <h4 class="date">2022-05-25</h4>
 
@@ -467,7 +467,9 @@ Calls_2016_2021.df$hour &lt;- as.factor(Calls_2016_2021.df$hour)</code></pre>
 database</strong></p>
 <p><strong>Description:</strong> The data comprises SBFD run data
 including fields of the Nfirs basic module plus a number of calculated
-fields.</p>
+fields. The hour of day field “hour”, is parsed from the time of call
+field. The integer is then converted to a factor variable for this
+analysis.</p>
 <p><strong>Format:</strong> Calls_2016_2021.df:A dataframe with 22412
 observations (calls), on 86 variables.</p>
 <hr />

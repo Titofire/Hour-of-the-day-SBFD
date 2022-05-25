@@ -1,5 +1,5 @@
 ---
-title: "Calls_per_hr"
+title: "Calls per Hour"
 author: "T. Poole"
 date: '2022-05-25'
 output: 
@@ -38,7 +38,9 @@ Calls_2016_2021.df$hour <- as.factor(Calls_2016_2021.df$hour)
 **pivot20212016.csv: data file queried from Fire House database**
 
 **Description:** The data comprises SBFD run data including fields of the Nfirs 
-basic module plus a number of calculated fields.
+basic module plus a number of calculated fields. The hour of day field "hour", is
+parsed from the time of call field. The integer is then converted to a factor
+variable for this analysis.
 
 **Format:** Calls_2016_2021.df:A dataframe with 22412 observations (calls), 
 on 86 variables.
